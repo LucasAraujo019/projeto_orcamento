@@ -13,6 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('Olá, seja bem-vindo ao sistema de orçamento');
+// });
+
+Route::get('/', 'PrincipalController@principal');
+
+Route::get('/sobre-nos', 'SobreNosController@sobreNos');
+
+Route::get('/contato', 'ContatoController@contato');
+
