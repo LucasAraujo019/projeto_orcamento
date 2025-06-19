@@ -42,17 +42,9 @@ Route::prefix('app')->group(function () {
     })->name('app.produtos');
 });
 
-Route::get('/rota1', function () {
-    return 'rota1';
-})->name('site.rota1');
-
-
-Route::get('/rota2', function () {
-    return redirect()->route('site.rota1');
-})->name('site.rota2');
+Route::get('/teste/{p1}/{p2}', 'TesteController@teste')->name('site.teste');
 
 Route::fallback(function () {
     return 'Página não encontrada, clique aqui para ir para página inicial <a href="'.route('site.index').'">Página Inicial</a>';
 });
 
-// Route::redirect('/rota2', '/rota1', 301);
